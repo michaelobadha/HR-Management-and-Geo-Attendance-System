@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../services/fetch_IMEI.dart';
 import '../../ui/constants/colors.dart';
 import '../../ui/pages/homepage.dart';
-import '../../ui/widgets/Info_dialog_box.dart';
 import '../../ui/widgets/loader_dialog.dart';
 
 import '../../services/authentication.dart';
@@ -80,19 +79,17 @@ class _LoginState extends State<Login> {
     DataSnapshot dataSnapshot =
         (await _userRef.child(_user.uid).once()).snapshot;
 
-    if (dataSnapshot != null) {
-      var uuid = (dataSnapshot.value as Map)["UUID"];
-      List listOfDetails = await getDeviceDetails();
+    var uuid = (dataSnapshot.value as Map)["UUID"];
+    List listOfDetails = await getDeviceDetails();
 
-      if (uuid != null) {
-        if (listOfDetails[2] == uuid)
-          return List.from([true, listOfDetails[2], true]);
-        else
-          return List.from([false, listOfDetails[2], true]);
-      }
-      return List.from([true, listOfDetails[2], false]);
+    if (uuid != null) {
+      if (listOfDetails[2] == uuid)
+        return List.from([true, listOfDetails[2], true]);
+      else
+        return List.from([false, listOfDetails[2], true]);
     }
-    return List.from([false, null, false]);
+    return List.from([true, listOfDetails[2], false]);
+      return List.from([false, null, false]);
   }
 
   void loginUser(String email) async {

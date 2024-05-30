@@ -131,13 +131,13 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           textTheme: TextTheme(
-              bodyText1: TextStyle(
+              bodyLarge: TextStyle(
                   color: Colors.black87,
                   fontFamily: "poppins-medium",
                   fontSize: 15,
                   letterSpacing: 0.5,
                   fontWeight: FontWeight.w400),
-              button: TextStyle(
+              labelLarge: TextStyle(
                   color: Colors.black87,
                   fontFamily: "poppins-medium",
                   fontSize: 18,
@@ -258,24 +258,22 @@ class LeaveApplicationWidgetState extends State<LeaveApplicationWidget>
                                               setState(() {
                                                 _fromDateInt = date;
 
-                                                if (_todate != null) {
-                                                  setState(() {
-                                                    int _difference = _toDateInt
-                                                            ?.difference(
-                                                                _fromDateInt ??
-                                                                    _toDateInt!)
-                                                            .inDays ??
-                                                        0;
-                                                    _difference += 1;
-                                                    if (_difference <= 0)
-                                                      leavesCount =
-                                                          "Invalid Dates";
-                                                    else
-                                                      leavesCount = _difference
-                                                          .toString();
-                                                  });
-                                                }
-                                              });
+                                                setState(() {
+                                                  int _difference = _toDateInt
+                                                          ?.difference(
+                                                              _fromDateInt ??
+                                                                  _toDateInt!)
+                                                          .inDays ??
+                                                      0;
+                                                  _difference += 1;
+                                                  if (_difference <= 0)
+                                                    leavesCount =
+                                                        "Invalid Dates";
+                                                  else
+                                                    leavesCount = _difference
+                                                        .toString();
+                                                });
+                                                                                            });
                                             },
                                                 currentTime: DateTime.now(),
                                                 locale: LocaleType.en);

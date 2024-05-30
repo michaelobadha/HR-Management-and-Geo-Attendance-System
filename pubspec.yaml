@@ -22,9 +22,9 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.2
+  flutter_staggered_grid_view: ^0.4.0
   splashscreen: any
   flutter_sparkline: any
-  flutter_staggered_grid_view: any
   calendarro: ^1.0.0
   firebase_auth: ^4.1.0
   flutter_screenutil: ^5.6.0
@@ -44,6 +44,8 @@ dependencies:
   flutter_local_notifications: ^12.0.3
   easy_geofencing: ^0.2.0
 
+  intl: any
+  firebase_core: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

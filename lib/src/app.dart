@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import './services/authentication.dart';
-
 import './ui/pages/splash_screen.dart';
 
 class App extends StatelessWidget {

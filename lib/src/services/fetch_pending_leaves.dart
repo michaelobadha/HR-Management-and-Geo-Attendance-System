@@ -33,7 +33,6 @@ class ReviewLeaveDatabase {
     DataSnapshot dataSnapshot =
         (await _databaseReference.child("Managers").child(uid).once()).snapshot;
     List<Leave> result = [];
-    if (dataSnapshot == null) return result;
     var dataMap = dataSnapshot.value;
     var listOfUsers = await listOfAllUsers();
     var listOfLeaves = await listOfAllLeaves();

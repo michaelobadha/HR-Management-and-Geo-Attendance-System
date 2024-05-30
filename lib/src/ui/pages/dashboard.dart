@@ -1,11 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../services/authentication.dart';
 import '../../ui/constants/colors.dart';
 import '../../ui/constants/dashboard_tile_info.dart';
-import '../../ui/pages/pending_approval_manager.dart';
 import '../../ui/pages/profile_page.dart';
 import '../../ui/widgets/dashboard_tile.dart';
 
@@ -160,6 +158,7 @@ class _NavigationPanelState extends State<NavigationPanel> {
               if (states.contains(MaterialState.hovered)) {
                 return Colors.transparent;
               }
+              return null;
             },
           ),
           side: MaterialStateProperty.resolveWith(

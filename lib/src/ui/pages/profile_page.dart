@@ -55,8 +55,7 @@ class _ContactItem extends StatelessWidget {
       {Key? key,
       required this.icon,
       required this.lines,
-      this.tooltip,
-      required this.onPressed})
+      required this.onPressed, this.tooltip})
       : assert(lines.length > 1),
         super(key: key);
 
@@ -81,7 +80,7 @@ class _ContactItem extends StatelessWidget {
                   ...lines
                       .sublist(0, lines.length - 1)
                       .map<Widget>((String line) => Text(line)),
-                  Text(lines.last, style: themeData.textTheme.caption),
+                  Text(lines.last, style: themeData.textTheme.bodySmall),
                 ],
               ),
             ),

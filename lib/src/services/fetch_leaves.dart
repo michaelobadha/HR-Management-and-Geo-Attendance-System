@@ -36,7 +36,7 @@ class LeaveDatabase {
     DataSnapshot dataSnapshot =
         (await _databaseReference.child("leaves").child(uid).once()).snapshot;
     List<Leave> result = [];
-    if (dataSnapshot == null || dataSnapshot.value == null) return result;
+    if (dataSnapshot.value == null) return result;
 
     var officeMap = dataSnapshot.value;
     (officeMap as Map).forEach((key, map) {
